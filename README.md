@@ -3,4 +3,5 @@
    - VITE_BASEURL=https://api.themoviedb.org/3
    - VITE_BASEIMGURL=https://image.tmdb.org/t/p/w500
    - VITE_APIKEY=your_api_key
+3. Website ini menggunakan TMDB sebagai API untuk menampilkan informasi film
 
