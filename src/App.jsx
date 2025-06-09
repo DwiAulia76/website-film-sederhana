@@ -7,8 +7,15 @@ import Movie from "./pages/Movie";
 import TVShow from "./pages/TVShow";
 import Favorites from "./pages/Favorites";
 import SearchResults from "./pages/SearchResult";
+import MovieDetail from "./components/DetailFilm";
+import { useParams } from "react-router-dom";
 
 import "./App.css";
+
+function MovieDetailWrapper() {
+  const { movieId } = useParams();
+  return <MovieDetail movieId={movieId} />;
+}
 
 function App() {
   return (
@@ -21,6 +28,7 @@ function App() {
         <Route path="/tvshow" element={<TVShow />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/search" element={<SearchResults />} />
+        <Route path="/movies/:movieId" element={<MovieDetailWrapper />} />
       </Routes>
     </Router>
   );

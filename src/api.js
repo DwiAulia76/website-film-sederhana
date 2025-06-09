@@ -129,3 +129,26 @@ export const getTvShowByGenre = async (genreId) => {
     return [];
   }
 };
+
+const MovieDetail = async (movieId) => {
+  try {
+    const detail = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+    );
+    console.log(detail.data); // tampilkan detail film di console atau simpan ke state
+  } catch (err) {
+    console.error("Gagal ambil detail film:", err);
+  }
+};
+
+export const getMovieDetail = async (movieId) => {
+  try {
+    const detail = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}`
+    );
+    return detail.data; // pastikan fungsi mengembalikan data
+  } catch (err) {
+    console.error("Gagal ambil detail film:", err);
+    return null;
+  }
+};
